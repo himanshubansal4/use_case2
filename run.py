@@ -12,7 +12,6 @@ def render_html():
 @app.route('/suggest')
 def autocomplete():
     query_word = request.args.get("q", "")
-    print(query_word)
     results = get_suggestions(query_word)
     resp = jsonify(results=results[:10])
     return resp
